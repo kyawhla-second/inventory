@@ -41,7 +41,7 @@
                             <td>#{{ $order->id }}</td>
                             <td>{{ optional($order->customer)->name ?? 'N/A' }}</td>
                             <td>{{ $order->order_date }}</td>
-                            <td>${{ number_format($order->total_amount, 2) }}</td>
+                            <td>@money($order->total_amount)</td>
                             <td>
                                 <span class="badge bg-{{ $order->badge_class }}">
                                     {{ ucfirst($order->status) }}

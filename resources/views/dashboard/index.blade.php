@@ -104,7 +104,7 @@
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
                                 {{__('Total Sales')}}</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">${{ number_format($totalSalesAmount, 2) }}</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">@money($totalSalesAmount)</div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
@@ -140,7 +140,7 @@
                                         <td><a href="{{ route('sales.show', $sale->id) }}">#{{ $sale->id }}</a></td>
                                         <td>{{ $sale->customer->name ?? 'N/A' }}</td>
                                         <td>{{ $sale->sale_date }}</td>
-                                        <td>${{ number_format($sale->total_amount, 2) }}</td>
+                                        <td>@money($sale->total_amount)</td>
                                     </tr>
                                 @empty
                                     <tr>
@@ -197,7 +197,7 @@
                 <div class="card-body">
                     <h4 class="small font-weight-bold">
                         {{__('Sales Progress')}}
-                        <span class="float-end">${{ number_format($currentMonthSales, 2) }} / ${{ number_format($monthlySalesGoal, 2) }}</span>
+                        <span class="float-end">@money($currentMonthSales) / @money($monthlySalesGoal)</span>
                     </h4>
                     <div class="progress mb-3">
                         <div class="progress-bar bg-success" role="progressbar" style="width: {{ $salesProgressPercentage }}%" aria-valuenow="{{ $salesProgressPercentage }}" aria-valuemin="0" aria-valuemax="100"></div>

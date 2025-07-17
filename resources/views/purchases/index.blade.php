@@ -29,7 +29,7 @@
                     <td>#{{ $purchase->id }}</td>
                     <td>{{ $purchase->supplier->name }}</td>
                     <td>{{ $purchase->purchase_date }}</td>
-                    <td>${{ number_format($purchase->total_amount, 2) }}</td>
+                    <td>@money($purchase->total_amount)</td>
                     <td>
                         <a href="{{ route('purchases.show', $purchase->id) }}" class="btn btn-sm btn-info">{{__('View')}}</a>
                     </td>

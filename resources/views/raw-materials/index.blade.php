@@ -43,7 +43,7 @@
                     <td>{{ $material->supplier->name ?? 'N/A' }}</td>
                     <td>{{ $material->quantity }}</td>
                     <td>{{ $material->unit }}</td>
-                    <td>${{ number_format($material->cost_per_unit, 2) }}</td>
+                    <td>@money($material->cost_per_unit)</td>
                     <td>
                         <a href="{{ route('raw-materials.edit', $material->id) }}" class="btn btn-sm btn-warning">Edit</a>
                         <form action="{{ route('raw-materials.destroy', $material->id) }}" method="POST" style="display:inline-block;">

@@ -32,7 +32,6 @@
     <table class="table table-bordered">
         <tr>
             <th>{{__('No')}}</th>
-            <th>{{__('Image')}}</th>
             <th>{{__('Name')}}</th>
             <th>{{__('Category')}}</th>
             <th>{{__('Quantity')}}</th>
@@ -42,11 +41,10 @@
         @foreach ($products as $product)
         <tr>
             <td>{{ ++$i }}</td>
-            <td><img src="/images/{{ $product->image }}" width="100px"></td>
             <td>{{ $product->name }}</td>
             <td>{{ $product->category->name }}</td>
             <td>{{ $product->quantity }}</td>
-            <td>${{ $product->price }}</td>
+            <td>@money($product->price)</td>
             <td>
                 <form action="{{ route('products.destroy',$product->id) }}" method="POST">
                     <a class="btn btn-info" href="{{ route('products.show',$product->id) }}">{{__('Show')}}</a>

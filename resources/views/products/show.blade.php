@@ -52,13 +52,13 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>{{__('Price')}}:</strong>
-                ${{ $product->price }}
+                @money($product->price)
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>{{__('Cost')}}:</strong>
-                ${{ $product->cost }}
+                @money($product->cost)
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">

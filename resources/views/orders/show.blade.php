@@ -23,7 +23,7 @@
                 <div class="card-body">
                     <p><strong>{{__('Order Date')}}:</strong> {{ $order->order_date }}</p>
                     <p><strong>{{__('Status')}}:</strong> <span class="badge bg-{{ $order->badge_class }}">{{ ucfirst($order->status) }}</span></p>
-                    <p><strong>{{__('Total')}}:</strong> ${{ number_format($order->total_amount, 2) }}</p>
+                    <p><strong>{{__('Total')}}:</strong> @money($order->total_amount)</p>
                 </div>
             </div>
         </div>
@@ -49,8 +49,8 @@
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ optional($item->product)->name ?? 'Deleted Product' }}</td>
                                 <td class="text-end">{{ $item->quantity }}</td>
-                                <td class="text-end">${{ number_format($item->price, 2) }}</td>
-                                <td class="text-end">${{ number_format($item->price * $item->quantity, 2) }}</td>
+                                <td class="text-end">@money($item->price)</td>
+                                <td class="text-end">@money($item->price * $item->quantity)</td>
                             </tr>
                         @endforeach
                     </tbody>

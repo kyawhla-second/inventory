@@ -21,7 +21,7 @@
             </div>
             <div class="col-md-6">
                 <label for="order_date" class="form-label">{{__('Order Date')}}</label>
-                <input type="date" name="order_date" id="order_date" class="form-control" required>
+                <input type="date" name="order_date" id="order_date" class="form-control" value="{{ now()->format('Y-m-d') }}" required>
             </div>
         </div>
 
@@ -62,7 +62,7 @@
                 </td>
                 <td><input type="number" name="products[${index}][quantity]" class="form-control qty" min="1" required></td>
                 <td><input type="number" name="products[${index}][price]" class="form-control price" step="0.01" min="0" required></td>
-                <td class="subtotal text-end">$0.00</td>
+                <td class="subtotal text-end">Ks 0.00</td>
                 <td><button type="button" class="btn btn-danger btn-sm remove">{{__('Remove')}}</button></td>
             `;
             tbody.appendChild(row);
@@ -74,7 +74,7 @@
                 const tr = e.target.closest('tr');
                 const qty = parseFloat(tr.querySelector('.qty').value) || 0;
                 const price = parseFloat(tr.querySelector('.price').value) || 0;
-                tr.querySelector('.subtotal').textContent = `$${(qty * price).toFixed(2)}`;
+                tr.querySelector('.subtotal').textContent = `Ks ${(qty * price).toFixed(2)}`;
             }
         });
 

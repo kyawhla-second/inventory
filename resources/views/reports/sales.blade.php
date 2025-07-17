@@ -29,11 +29,11 @@
                             <td>
                                 <ul>
                                     @foreach ($sale->items as $item)
-                                        <li>{{ $item->product->name }} ({{ $item->quantity }} x ${{ number_format($item->unit_price, 2) }})</li>
+                                        <li>{{ $item->product->name }} ({{ $item->quantity }} x @money($item->unit_price))</li>
                                     @endforeach
                                 </ul>
                             </td>
-                            <td>${{ number_format($sale->total_amount, 2) }}</td>
+                            <td>@money($sale->total_amount)</td>
                         </tr>
                     @empty
                         <tr>
@@ -44,7 +44,7 @@
                 <tfoot>
                     <tr>
                         <th colspan="3" class="text-end">{{__('Total Sales')}}:</th>
-                        <th>${{ number_format($totalSales, 2) }}</th>
+                        <th>@money($totalSales)</th>
                     </tr>
                 </tfoot>
             </table>

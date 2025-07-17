@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -47,10 +48,10 @@ class ProductController extends Controller
         $input = $request->all();
 
         if ($image = $request->file('image')) {
-            $destinationPath = 'images/';
-            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
-            $image->move($destinationPath, $profileImage);
-            $input['image'] = "$profileImage";
+            $profileImage = uniqid() . '.' . $image->getClientOriginalExtension();
+            $image->storeAs('public/images', $profileImage);
+            // store relative path for later retrieval
+            $input['image'] = 'storage/images/' . $profileImage;
         }
 
         Product::create($input);
@@ -87,10 +88,9 @@ class ProductController extends Controller
         $input = $request->all();
 
         if ($image = $request->file('image')) {
-            $destinationPath = 'images/';
-            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
-            $image->move($destinationPath, $profileImage);
-            $input['image'] = "$profileImage";
+            $profileImage = uniqid() . '.' . $image->getClientOriginalExtension();
+            $image->storeAs('public/images', $profileImage);
+            $input['image'] = 'storage/images/' . $profileImage;
         } else {
             unset($input['image']);
         }

@@ -34,7 +34,7 @@
         <tr>
             <td>{{ ++$i }}</td>
             <td>{{ $sale->sale_date }}</td>
-            <td>${{ number_format($sale->total_amount, 2) }}</td>
+            <td>@money($sale->total_amount)</td>
             <td>
                 <form action="{{ route('sales.destroy',$sale->id) }}" method="POST">
                     <a class="btn btn-info" href="{{ route('sales.show',$sale->id) }}">{{__('Show')}}</a>

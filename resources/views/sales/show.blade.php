@@ -42,8 +42,8 @@
                 <tr>
                     <td>{{ $item->product->name }}</td>
                     <td>{{ $item->quantity }}</td>
-                    <td>${{ number_format($item->unit_price, 2) }}</td>
-                    <td>${{ number_format($item->quantity * $item->unit_price, 2) }}</td>
+                    <td>@money($item->unit_price)</td>
+                    <td>@money($item->quantity * $item->unit_price)</td>
                 </tr>
             @endforeach
         </tbody>
@@ -51,7 +51,7 @@
 
     <div class="row mt-3">
         <div class="col-xs-12 col-sm-12 col-md-12 text-right">
-            <h4>{{__('Total Amount')}}: ${{ number_format($sale->total_amount, 2) }}</h4>
+            <h4>{{__('Total Amount')}}: @money($sale->total_amount)</h4>
         </div>
     </div>
 @endsection

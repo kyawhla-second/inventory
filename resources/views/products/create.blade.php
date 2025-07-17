@@ -39,18 +39,8 @@
                 <textarea class="form-control" style="height:150px" name="description" placeholder="Description"></textarea>
             </div>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>{{__('Barcode')}}:</strong>
-                <input type="text" name="barcode" class="form-control" placeholder="Barcode">
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>{{__('Image')}}:</strong>
-                <input type="file" name="image" class="form-control">
-            </div>
-        </div>
+       
+        
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>{{__('Category')}}:</strong>
@@ -64,13 +54,13 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>{{__('Quantity')}}:</strong>
-                <input type="number" name="quantity" class="form-control" placeholder="Quantity">
+                <input type="text" name="quantity" class="form-control" placeholder="Quantity">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>{{__('Price')}}:</strong>
-                <input type="number" step="0.01" name="price" class="form-control" placeholder="Price">
+                <input type="text" name="price" class="form-control" placeholder="Price">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">

@@ -20,7 +20,7 @@ Route::get('lang/{locale}', function ($locale) {
         abort(400);
     }
     session(['locale' => $locale]);
-    return redirect()->back();
+    return redirect()->back()->withCookie(cookie('locale', $locale, 60*24*365)); // 1 year
 })->name('lang.switch');
 
 Route::middleware('auth')->group(function () {

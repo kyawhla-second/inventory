@@ -4,10 +4,10 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Sales</h2>
+                <h2>{{__('Sales')}}</h2>
             </div>
             <div class="pull-right mb-2">
-                <a class="btn btn-success" href="{{ route('sales.create') }}"> Record New Sale</a>
+                <a class="btn btn-success" href="{{ route('sales.create') }}"> {{__('Record New Sale')}}</a>
             </div>
         </div>
     </div>
@@ -25,10 +25,10 @@
 
     <table class="table table-bordered">
         <tr>
-            <th>No</th>
-            <th>Sale Date</th>
-            <th>Total Amount</th>
-            <th width="280px">Action</th>
+            <th>{{__('No')}}</th>
+            <th>{{__('Sale Date')}}</th>
+            <th>{{__('Total Amount')}}</th>
+            <th width="280px">{{__('Action')}}</th>
         </tr>
         @foreach ($sales as $sale)
         <tr>
@@ -37,10 +37,10 @@
             <td>${{ number_format($sale->total_amount, 2) }}</td>
             <td>
                 <form action="{{ route('sales.destroy',$sale->id) }}" method="POST">
-                    <a class="btn btn-info" href="{{ route('sales.show',$sale->id) }}">Show</a>
+                    <a class="btn btn-info" href="{{ route('sales.show',$sale->id) }}">{{__('Show')}}</a>
                     @csrf
                     @method('DELETE')
-                    <button type="submit" class="btn btn-danger">Delete</button>
+                    <button type="submit" class="btn btn-danger">{{__('Delete')}}</button>
                 </form>
             </td>
         </tr>

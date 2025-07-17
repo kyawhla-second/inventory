@@ -3,27 +3,27 @@
 @section('content')
 <div class="container">
     <div class="d-flex justify-content-between align-items-center mb-3">
-        <h1>Purchase Details</h1>
-        <a href="{{ route('purchases.index') }}" class="btn btn-secondary">Back to List</a>
+        <h1>{{__('Purchase Details')}}</h1>
+        <a href="{{ route('purchases.index') }}" class="btn btn-secondary">{{__('Back to List')}}</a>
     </div>
 
     <div class="card">
         <div class="card-header">
-            Purchase #{{ $purchase->id }}
+            {{__('Purchase')}} #{{ $purchase->id }}
         </div>
         <div class="card-body">
-            <p><strong>Date:</strong> {{ $purchase->purchase_date }}</p>
-            <p><strong>Supplier:</strong> {{ $purchase->supplier->name }}</p>
-            <p><strong>Total Amount:</strong> ${{ number_format($purchase->total_amount, 2) }}</p>
+            <p><strong>{{__('Date')}}:</strong> {{ $purchase->purchase_date }}</p>
+            <p><strong>{{__('Supplier')}}:</strong> {{ $purchase->supplier->name }}</p>
+            <p><strong>{{__('Total Amount')}}:</strong> ${{ number_format($purchase->total_amount, 2) }}</p>
 
-            <h5 class="mt-4">Items</h5>
+            <h5 class="mt-4">{{__('Items')}}</h5>
             <table class="table table-bordered">
                 <thead>
                     <tr>
-                        <th>Product</th>
-                        <th>Quantity</th>
-                        <th>Cost</th>
-                        <th>Subtotal</th>
+                        <th>{{__('Product')}}</th>
+                        <th>{{__('Quantity')}}</th>
+                        <th>{{__('Cost')}}</th>
+                        <th>{{__('Subtotal')}}</th>
                     </tr>
                 </thead>
                 <tbody>

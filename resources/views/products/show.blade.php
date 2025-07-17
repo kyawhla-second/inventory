@@ -4,10 +4,10 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2> Show Product</h2>
+                <h2>{{__('Show Product')}}</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('products.index') }}"> Back</a>
+                <a class="btn btn-primary" href="{{ route('products.index') }}"> {{__('Back')}}</a>
             </div>
         </div>
     </div>
@@ -15,55 +15,55 @@
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Name:</strong>
+                <strong>{{__('Name')}}:</strong>
                 {{ $product->name }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Description:</strong>
+                <strong>{{__('Description')}}:</strong>
                 {{ $product->description }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Barcode:</strong>
+                <strong>{{__('Barcode')}}:</strong>
                 {{ $product->barcode }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Image:</strong>
+                <strong>{{__('Image')}}:</strong>
                 <img src="/images/{{ $product->image }}" width="200px">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Category:</strong>
+                <strong>{{__('Category')}}:</strong>
                 {{ $product->category->name }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Quantity:</strong>
+                <strong>{{__('Quantity')}}:</strong>
                 {{ $product->quantity }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Price:</strong>
+                <strong>{{__('Price')}}:</strong>
                 ${{ $product->price }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Cost:</strong>
+                <strong>{{__('Cost')}}:</strong>
                 ${{ $product->cost }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Minimum Stock Level:</strong>
+                <strong>{{__('Minimum Stock Level')}}:</strong>
                 {{ $product->minimum_stock_level }}
             </div>
         </div>

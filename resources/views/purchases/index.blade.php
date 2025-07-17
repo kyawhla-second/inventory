@@ -3,8 +3,8 @@
 @section('content')
 <div class="container">
     <div class="d-flex justify-content-between align-items-center mb-3">
-        <h1>Purchases</h1>
-        <a href="{{ route('purchases.create') }}" class="btn btn-primary">Add Purchase</a>
+        <h1>{{__('Purchases')}}</h1>
+        <a href="{{ route('purchases.create') }}" class="btn btn-primary">{{__('Add Purchase')}}</a>
     </div>
 
     @if (session('success'))
@@ -16,11 +16,11 @@
     <table class="table table-bordered">
         <thead>
             <tr>
-                <th>ID</th>
-                <th>Supplier</th>
-                <th>Purchase Date</th>
-                <th>Total Amount</th>
-                <th>Actions</th>
+                <th>{{__('ID')}}</th>
+                <th>{{__('Supplier')}}</th>
+                <th>{{__('Purchase Date')}}</th>
+                <th>{{__('Total Amount')}}</th>
+                <th>{{__('Actions')}}</th>
             </tr>
         </thead>
         <tbody>
@@ -31,12 +31,12 @@
                     <td>{{ $purchase->purchase_date }}</td>
                     <td>${{ number_format($purchase->total_amount, 2) }}</td>
                     <td>
-                        <a href="{{ route('purchases.show', $purchase->id) }}" class="btn btn-sm btn-info">View</a>
+                        <a href="{{ route('purchases.show', $purchase->id) }}" class="btn btn-sm btn-info">{{__('View')}}</a>
                     </td>
                 </tr>
             @empty
                 <tr>
-                    <td colspan="5" class="text-center">No purchases found.</td>
+                    <td colspan="5" class="text-center">{{__('No purchases found.')}}</td>
                 </tr>
             @endforelse
         </tbody>

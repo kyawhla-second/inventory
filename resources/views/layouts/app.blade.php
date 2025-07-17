@@ -9,7 +9,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{{ route('dashboard') }}">Inventory</a>
+            <a class="navbar-brand" href="{{ route('dashboard') }}">{{ __('Inventory') }}</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -19,35 +19,35 @@
                     @auth
                         @if(auth()->user()->role == 'admin')
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('categories.index') }}">Categories</a>
+                                <a class="nav-link {{ request()->routeIs('categories.*') ? 'active' : '' }}" href="{{ route('categories.index') }}">{{ __('Categories') }}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('suppliers.index') }}">Suppliers</a>
+                                <a class="nav-link {{ request()->routeIs('suppliers.*') ? 'active' : '' }}" href="{{ route('suppliers.index') }}">{{ __('Suppliers') }}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('reports.index') }}">Reports</a>
+                                <a class="nav-link {{ request()->routeIs('reports.*') ? 'active' : '' }}" href="{{ route('reports.index') }}">{{ __('Reports') }}</a>
                             </li>
                         @endif
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('products.index') }}">Products</a>
+                            <a class="nav-link {{ request()->routeIs('products.*') ? 'active' : '' }}" href="{{ route('products.index') }}">{{ __('Products') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('purchases.index') }}">Purchases</a>
+                            <a class="nav-link {{ request()->routeIs('purchases.*') ? 'active' : '' }}" href="{{ route('purchases.index') }}">{{ __('Purchases') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('sales.index') }}">Sales</a>
+                            <a class="nav-link {{ request()->routeIs('sales.*') ? 'active' : '' }}" href="{{ route('sales.index') }}">{{ __('Sales') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('customers.index') }}">Customers</a>
+                            <a class="nav-link {{ request()->routeIs('customers.*') ? 'active' : '' }}" href="{{ route('customers.index') }}">{{ __('Customers') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('raw-materials.index') }}">Raw Materials</a>
+                            <a class="nav-link {{ request()->routeIs('raw-materials.index') ? 'active' : '' }}" href="{{ route('raw-materials.index') }}">{{ __('Raw Materials') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('raw-materials.low-stock') }}">Low Stock Raw Materials</a>
+                            <a class="nav-link {{ request()->routeIs('raw-materials.low-stock') ? 'active' : '' }}" href="{{ route('raw-materials.low-stock') }}">{{ __('Low Stock Raw Materials') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('orders.index') }}">Customer Orders</a>
+                            <a class="nav-link {{ request()->routeIs('orders.*') ? 'active' : '' }}" href="{{ route('orders.index') }}">{{ __('Customer Orders') }}</a>
                         </li>
                     @endauth
                 </ul>

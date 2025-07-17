@@ -2,17 +2,17 @@
 
 @section('content')
 <div class="container">
-    <h1>Low Stock Raw Materials</h1>
+    <h1>{{__('Low Stock Raw Materials')}}</h1>
 
     <table class="table table-bordered">
         <thead>
             <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Supplier</th>
-                <th>Current Quantity</th>
-                <th>Minimum Stock Level</th>
-                <th>Unit</th>
+                <th>{{__('ID')}}</th>
+                <th>{{__('Name')}}</th>
+                <th>{{__('Supplier')}}</th>
+                <th>{{__('Current Quantity')}}</th>
+                <th>{{__('Minimum Stock Level')}}</th>
+                <th>{{__('Unit')}}</th>
             </tr>
         </thead>
         <tbody>
@@ -27,7 +27,7 @@
                 </tr>
             @empty
                 <tr>
-                    <td colspan="6" class="text-center">No raw materials are low on stock.</td>
+                    <td colspan="6" class="text-center">{{__('No raw materials are low on stock')}}</td>
                 </tr>
             @endforelse
         </tbody>

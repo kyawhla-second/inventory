@@ -2,16 +2,16 @@
 
 @section('content')
 <div class="container">
-    <h1>Add Purchase</h1>
+    <h1>{{__('Add Purchase')}}</h1>
 
     <form action="{{ route('purchases.store') }}" method="POST">
         @csrf
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="supplier_id">Supplier</label>
+                    <label for="supplier_id">{{__('Supplier')}}</label>
                     <select name="supplier_id" id="supplier_id" class="form-control" required>
-                        <option value="">Select Supplier</option>
+                        <option value="">{{__('Select Supplier')}}</option>
                         @foreach ($suppliers as $supplier)
                             <option value="{{ $supplier->id }}">{{ $supplier->name }}</option>
                         @endforeach
@@ -20,20 +20,20 @@
             </div>
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="purchase_date">Purchase Date</label>
+                    <label for="purchase_date">{{__('Purchase Date')}}</label>
                     <input type="date" name="purchase_date" id="purchase_date" class="form-control" required>
                 </div>
             </div>
         </div>
 
-        <h3 class="mt-4">Products</h3>
+        <h3 class="mt-4">{{__('Products')}}</h3>
         <table class="table table-bordered" id="products_table">
             <thead>
                 <tr>
-                    <th>Product</th>
-                    <th>Quantity</th>
-                    <th>Cost</th>
-                    <th>Action</th>
+                    <th>{{__('Product')}}</th>
+                    <th>{{__('Quantity')}}</th>
+                    <th>{{__('Cost')}}</th>
+                    <th>{{__('Action')}}</th>
                 </tr>
             </thead>
             <tbody>
@@ -41,8 +41,8 @@
             </tbody>
         </table>
 
-        <button type="button" class="btn btn-secondary" id="add_row">Add Product</button>
-        <button type="submit" class="btn btn-primary">Save Purchase</button>
+        <button type="button" class="btn btn-secondary" id="add_row">{{__('Add Product')}}</button>
+        <button type="submit" class="btn btn-primary">{{__('Save Purchase')}}</button>
     </form>
 </div>
 
@@ -57,7 +57,7 @@
             newRow.innerHTML = `
                 <td>
                     <select name="products[${productRowIndex}][product_id]" class="form-control" required>
-                        <option value="">Select Product</option>
+                        <option value="">{{__('Select Product')}}</option>
                         @foreach ($products as $product)
                             <option value="{{ $product->id }}">{{ $product->name }}</option>
                         @endforeach

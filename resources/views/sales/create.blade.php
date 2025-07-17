@@ -4,10 +4,10 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Record New Sale</h2>
+                <h2>{{__('Record New Sale')}}</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('sales.index') }}"> Back</a>
+                <a class="btn btn-primary" href="{{ route('sales.index') }}"> {{__('Back')}}</a>
             </div>
         </div>
     </div>
@@ -35,37 +35,37 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-6">
                 <div class="form-group">
-                    <strong>Sale Date:</strong>
+                    <strong>{{__('Sale Date')}}</strong>
                     <input type="date" name="sale_date" class="form-control" value="{{ old('sale_date', date('Y-m-d')) }}">
                 </div>
             </div>
         </div>
 
-        <h4 class="mt-4">Products</h4>
+        <h4 class="mt-4">{{__('Products')}}</h4>
         <table class="table table-bordered" id="products_table">
             <thead>
                 <tr>
-                    <th>Product</th>
-                    <th>Quantity</th>
-                    <th>Unit Price</th>
-                    <th>Subtotal</th>
-                    <th>Action</th>
+                    <th>{{__('Product')}}</th>
+                    <th>{{__('Quantity')}}</th>
+                    <th>{{__('Unit Price')}}</th>
+                    <th>{{__('Subtotal')}}</th>
+                    <th>{{__('Action')}}</th>
                 </tr>
             </thead>
             <tbody>
                 <!-- Product rows will be added here dynamically -->
             </tbody>
         </table>
-        <button type="button" class="btn btn-primary" id="add_product_row">Add Product</button>
+        <button type="button" class="btn btn-primary" id="add_product_row">{{__('Add Product')}}</button>
         <div class="row mt-3">
             <div class="col-xs-12 col-sm-12 col-md-12 text-right">
-                <h4>Total Amount: $<span id="total_amount">0.00</span></h4>
+                <h4>{{__('Total Amount')}}: $<span id="total_amount">0.00</span></h4>
             </div>
         </div>
 
 
         <div class="col-xs-12 col-sm-12 col-md-12 text-center mt-3">
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">{{__('Submit')}}</button>
         </div>
     </form>
 

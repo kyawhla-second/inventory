@@ -4,7 +4,7 @@
 <div class="container-fluid">
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+        <h1 class="h3 mb-0 text-gray-800">{{__('Dashboard')}}</h1>
     </div>
 
     <!-- Content Row -->
@@ -17,7 +17,7 @@
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                Total Products</div>
+                                {{__('Total Products')}}</div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $totalProducts }}</div>
                         </div>
                         <div class="col-auto">
@@ -35,7 +35,7 @@
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                Total Customers</div>
+                                {{__('Total Customers')}}</div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $totalCustomers }}</div>
                         </div>
                         <div class="col-auto">
@@ -53,7 +53,7 @@
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
-                                Total Suppliers</div>
+                                {{__('Total Suppliers')}}</div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $totalSuppliers }}</div>
                         </div>
                         <div class="col-auto">
@@ -71,7 +71,7 @@
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-dark text-uppercase mb-1">
-                                Total Orders</div>
+                                {{__('Total Orders')}}</div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $totalOrders }}</div>
                         </div>
                         <div class="col-auto">
@@ -103,7 +103,7 @@
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                Total Sales</div>
+                                {{__('Total Sales')}}</div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">${{ number_format($totalSalesAmount, 2) }}</div>
                         </div>
                         <div class="col-auto">
@@ -121,17 +121,17 @@
         <div class="col-xl-8 col-lg-7">
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Recent Sales</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">{{__('Recent Sales')}}</h6>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                             <thead>
                                 <tr>
-                                    <th>ID</th>
-                                    <th>Customer</th>
-                                    <th>Date</th>
-                                    <th>Total</th>
+                                    <th>{{__('ID')}}</th>
+                                    <th>{{__('Customer')}}</th>
+                                    <th>{{__('Date')}}</th>
+                                    <th>{{__('Total')}}</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -159,7 +159,7 @@
             <div class="card shadow mb-4">
                 <!-- Card Header -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold text-primary">Low Stock Products</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">{{__('Low Stock Products')}}</h6>
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
@@ -167,8 +167,8 @@
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
-                                    <th>Product</th>
-                                    <th>Stock</th>
+                                    <th>{{__('Product')}}</th>
+                                    <th>{{__('Stock')}}</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -179,7 +179,7 @@
                                     </tr>
                                 @empty
                                     <tr>
-                                        <td colspan="2" class="text-center">No products are low on stock.</td>
+                                        <td colspan="2" class="text-center">{{__('No products are low on stock')}}</td>
                                     </tr>
                                 @endforelse
                             </tbody>
@@ -191,11 +191,11 @@
             <!-- Monthly Sales Goal -->
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Monthly Sales Goal</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">{{__('Monthly Sales Goal')}}</h6>
                 </div>
                 <div class="card-body">
                     <h4 class="small font-weight-bold">
-                        Sales Progress
+                        {{__('Sales Progress')}}
                         <span class="float-end">${{ number_format($currentMonthSales, 2) }} / ${{ number_format($monthlySalesGoal, 2) }}</span>
                     </h4>
                     <div class="progress mb-3">
@@ -207,7 +207,7 @@
                     <form action="{{ route('dashboard.goal') }}" method="POST" class="d-flex">
                         @csrf
                         <input type="number" step="0.01" name="monthly_sales_goal" class="form-control form-control-sm me-2" placeholder="New goal" required>
-                        <button type="submit" class="btn btn-sm btn-primary">Update</button>
+                        <button type="submit" class="btn btn-sm btn-primary">{{__('Update')}}</button>
                     </form>
                     @if(session('success'))
                         <div class="alert alert-success mt-2 p-1 text-center">{{ session('success') }}</div>
@@ -222,18 +222,18 @@
         <div class="col-xl-12">
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-danger">Low Stock Raw Materials</h6>
+                    <h6 class="m-0 font-weight-bold text-danger">{{__('Low Stock Raw Materials')}}</h6>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
-                                    <th>Name</th>
-                                    <th>Current Quantity</th>
-                                    <th>Minimum Level</th>
-                                    <th>Unit</th>
-                                    <th>Supplier</th>
+                                    <th>{{__('Name')}}</th>
+                                    <th>{{__('Current Quantity')}}</th>
+                                    <th>{{__('Minimum Level')}}</th>
+                                    <th>{{__('Unit')}}</th>
+                                    <th>{{__('Supplier')}}</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -247,7 +247,7 @@
                                     </tr>
                                 @empty
                                     <tr>
-                                        <td colspan="5" class="text-center">No raw materials are low on stock.</td>
+                                        <td colspan="5" class="text-center">{{__('No raw materials are low on stock.')}}</td>
                                     </tr>
                                 @endforelse
                             </tbody>
@@ -265,7 +265,7 @@
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Monthly Sales Goal</div>
+                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">{{__('Monthly Sales Goal')}}</div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">${{ number_format($monthlySalesGoal, 2) }}</div>
                             <div class="progress mt-2">
                                 <div class="progress-bar bg-success" role="progressbar" style="width: {{ $salesProgressPercentage }}%" aria-valuenow="{{ $salesProgressPercentage }}" aria-valuemin="0" aria-valuemax="100"></div>
@@ -293,7 +293,7 @@
     <div class="row mt-4">
         <div class="col-lg-8 mb-4">
             <div class="card shadow">
-                <div class="card-header">Monthly Sales vs Purchases (Last 12 Months)</div>
+                <div class="card-header">{{__('Monthly Sales vs Purchases (Last 12 Months)')}}</div>
                 <div class="card-body">
                     <canvas id="salesPurchasesChart" height="120"></canvas>
                 </div>
@@ -301,7 +301,7 @@
         </div>
         <div class="col-lg-4 mb-4">
             <div class="card shadow">
-                <div class="card-header">Top Selling Products</div>
+                <div class="card-header">{{__('Top Selling Products')}}</div>
                 <div class="card-body">
                     <canvas id="topProductsChart" height="120"></canvas>
                 </div>

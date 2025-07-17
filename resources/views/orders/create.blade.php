@@ -3,15 +3,15 @@
 @section('content')
 <div class="container">
     <div class="d-flex justify-content-between align-items-center mb-4">
-        <h1>Create Order</h1>
-        <a href="{{ route('orders.index') }}" class="btn btn-secondary">Back to Orders</a>
+        <h1>{{__('Create Order')}}</h1>
+        <a href="{{ route('orders.index') }}" class="btn btn-secondary">{{__('Back to Orders')}}</a>
     </div>
 
     <form action="{{ route('orders.store') }}" method="POST">
         @csrf
         <div class="row mb-3">
             <div class="col-md-6">
-                <label for="customer_id" class="form-label">Customer</label>
+                <label for="customer_id" class="form-label">{{__('Customer')}}</label>
                 <select name="customer_id" id="customer_id" class="form-select" required>
                     <option value="">Select Customer</option>
                     @foreach ($customers as $customer)
@@ -20,26 +20,26 @@
                 </select>
             </div>
             <div class="col-md-6">
-                <label for="order_date" class="form-label">Order Date</label>
+                <label for="order_date" class="form-label">{{__('Order Date')}}</label>
                 <input type="date" name="order_date" id="order_date" class="form-control" required>
             </div>
         </div>
 
-        <h4 class="mt-3">Order Items</h4>
+        <h4 class="mt-3">{{__('Order Items')}}</h4>
         <table class="table table-bordered" id="items_table">
             <thead>
                 <tr>
-                    <th>Product</th>
-                    <th>Quantity</th>
-                    <th>Price</th>
-                    <th>Subtotal</th>
-                    <th>Action</th>
+                    <th>{{__('Product')}}</th>
+                    <th>{{__('Quantity')}}</th>
+                    <th>{{__('Price')}}</th>
+                    <th>{{__('Subtotal')}}</th>
+                    <th>{{__('Action')}}</th>
                 </tr>
             </thead>
             <tbody></tbody>
         </table>
-        <button type="button" class="btn btn-secondary" id="add_item">Add Item</button>
-        <button type="submit" class="btn btn-primary">Save Order</button>
+        <button type="button" class="btn btn-secondary" id="add_item">{{__('Add Item')}}</button>
+        <button type="submit" class="btn btn-primary">{{__('Save Order')}}</button>
     </form>
 </div>
 
@@ -63,7 +63,7 @@
                 <td><input type="number" name="products[${index}][quantity]" class="form-control qty" min="1" required></td>
                 <td><input type="number" name="products[${index}][price]" class="form-control price" step="0.01" min="0" required></td>
                 <td class="subtotal text-end">$0.00</td>
-                <td><button type="button" class="btn btn-danger btn-sm remove">Remove</button></td>
+                <td><button type="button" class="btn btn-danger btn-sm remove">{{__('Remove')}}</button></td>
             `;
             tbody.appendChild(row);
             index++;

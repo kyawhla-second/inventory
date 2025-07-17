@@ -3,16 +3,16 @@
 @section('content')
 <div class="container">
     <div class="d-flex justify-content-between align-items-center mb-3">
-        <h1>Raw Materials</h1>
-        <a href="{{ route('raw-materials.create') }}" class="btn btn-primary">Add Raw Material</a>
+        <h1>{{__('Raw Materials')}}</h1>
+        <a href="{{ route('raw-materials.create') }}" class="btn btn-primary">{{__('Add Raw Material')}}</a>
     </div>
 
     <!-- Search Form -->
     <form action="{{ route('raw-materials.index') }}" method="GET" class="mb-3">
         <div class="input-group">
-            <input type="text" name="search" class="form-control" placeholder="Search by name..." value="{{ request('search') }}">
+            <input type="text" name="search" class="form-control" placeholder="{{__('Search by name...')}}" value="{{ request('search') }}">
             <div class="input-group-append">
-                <button class="btn btn-outline-secondary" type="submit">Search</button>
+                <button class="btn btn-outline-secondary" type="submit">{{__('Search')}}</button>
             </div>
         </div>
     </form>
@@ -26,13 +26,13 @@
     <table class="table table-bordered">
         <thead>
             <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Supplier</th>
-                <th>Quantity</th>
-                <th>Unit</th>
-                <th>Cost Per Unit</th>
-                <th>Actions</th>
+                <th>{{__('ID')}}</th>
+                <th>{{__('Name')}}</th>
+                <th>{{__('Supplier')}}</th>
+                <th>{{__('Quantity')}}</th>
+                <th>{{__('Unit')}}</th>
+                <th>{{__('Cost Per Unit')}}</th>
+                <th>{{__('Actions')}}</th>
             </tr>
         </thead>
         <tbody>
@@ -55,7 +55,7 @@
                 </tr>
             @empty
                 <tr>
-                    <td colspan="7" class="text-center">No raw materials found.</td>
+                    <td colspan="7" class="text-center">{{__('No raw materials found')}}</td>
                 </tr>
             @endforelse
         </tbody>

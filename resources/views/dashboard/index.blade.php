@@ -188,6 +188,7 @@
                 </div>
             </div>
 
+            @if(auth()->user()->role == 'admin')
             <!-- Monthly Sales Goal -->
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
@@ -216,6 +217,7 @@
             </div>
         </div>
     </div>
+        @endif
 
     <!-- Low Stock Raw Materials -->
     <div class="row">
@@ -229,21 +231,21 @@
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
-                                    <th>{{__('Name')}}</th>
-                                    <th>{{__('Current Quantity')}}</th>
-                                    <th>{{__('Minimum Level')}}</th>
-                                    <th>{{__('Unit')}}</th>
-                                    <th>{{__('Supplier')}}</th>
+                                    <th class="text-nowrap">{{__('Name')}}</th>
+                                    <th class="text-nowrap">{{__('Current Quantity')}}</th>
+                                    <th class="text-nowrap">{{__('Minimum Level')}}</th>
+                                    <th class="text-nowrap">{{__('Unit')}}</th>
+                                    <th class="text-nowrap">{{__('Supplier')}}</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @forelse ($lowStockRawMaterials as $material)
                                     <tr>
-                                        <td><a href="{{ route('raw-materials.show', $material->id) }}">{{ $material->name }}</a></td>
-                                        <td><span class="badge bg-danger">{{ $material->quantity }}</span></td>
-                                        <td>{{ $material->minimum_stock_level }}</td>
-                                        <td>{{ $material->unit }}</td>
-                                        <td>{{ $material->supplier->name ?? 'N/A' }}</td>
+                                        <td class="text-nowrap"><a href="{{ route('raw-materials.show', $material->id) }}">{{ $material->name }}</a></td>
+                                        <td class="text-nowrap"><span class="badge bg-danger">{{ $material->quantity }}</span></td>
+                                        <td class="text-nowrap">{{ $material->minimum_stock_level }}</td>
+                                        <td class="text-nowrap">{{ $material->unit }}</td>
+                                        <td class="text-nowrap">{{ $material->supplier->name ?? 'N/A' }}</td>
                                     </tr>
                                 @empty
                                     <tr>

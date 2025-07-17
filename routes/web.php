@@ -14,6 +14,15 @@ use App\Http\Controllers\OrderController;
 
 Auth::routes();
 
+// Language switcher
+Route::get('lang/{locale}', function ($locale) {
+    if (! in_array($locale, ['en', 'mm'])) {
+        abort(400);
+    }
+    session(['locale' => $locale]);
+    return redirect()->back();
+})->name('lang.switch');
+
 Route::middleware('auth')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
     Route::post('/dashboard/goal', [DashboardController::class, 'updateGoal'])->name('dashboard.goal');

@@ -21,5 +21,9 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Paginator::useBootstrap();
+
+        // Set application locale from session if available
+        $locale = session('locale', config('app.locale'));
+        app()->setLocale($locale);
     }
 }

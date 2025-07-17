@@ -59,6 +59,15 @@
                             <i class="fas fa-moon"></i>
                         </button>
                     </li>
+                    <li class="nav-item dropdown me-2">
+                        <a class="nav-link dropdown-toggle" href="#" id="langDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            {{ strtoupper(app()->getLocale()) }}
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="langDropdown">
+                            <li><a class="dropdown-item" href="{{ route('lang.switch', 'en') }}">English</a></li>
+                            <li><a class="dropdown-item" href="{{ route('lang.switch', 'mm') }}">မြန်မာ</a></li>
+                        </ul>
+                    </li>
                     <!-- Authentication Links -->
                     @guest
                         @if (Route::has('login'))
